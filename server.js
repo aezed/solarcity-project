@@ -1,12 +1,16 @@
 // DEPENDENCIES ====================================
+'use strict';
+
 const express = require('express');
 const mongoose = require('mongoose');
 const SolarProspect = require('./models/solarProspectModel.js')
+const bodyParser = require('body-parser');
 
 // CONFIGURATION ===================================
 const PORT = 8080;
 const app = express();
 app.use(express.static('client'));
+app.use(bodyParser());
 mongoose.connect('mongodb://localhost/solarbase');
 
 // ROUTING ========================================
