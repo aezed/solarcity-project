@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Solar Online Sales</title>
+  <!-- Add Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <!-- Application -->
+  <script src="../src/app.js"></script>
 </head>
-<body>
+<body ng-app="solarSales">
   <h1>Solar Online Sales</h1>
+  <div ng-controller="salesController">
+    <h4>{{test}}</h4>
+  </div>
 </body>
 </html>
