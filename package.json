@@ -19,5 +19,6 @@
   "homepage": "https://github.com/aezed/solarcity-project#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "mongoose": "^4.5.8"
   }
 }
