@@ -9,38 +9,33 @@
   <script src="../src/app.js"></script>
 </head>
 <body ng-app="solarSales">
-  <h1>Solar Online Sales</h1>
+  <h1>Tell us about yourself!</h1>
   <div ng-controller="salesController">
+    <p>All fields are mandatory.</p>
     <form name="salesForm">
       <label id="label-name">
-        <p>Name</p>
-        <input type="text" ng-model="prospect.name" />
+        <input type="text" ng-model="prospect.name" placeholder="Name" required />
       </label>
       <label id="label-age">
-        <p>Age</p>
-        <input type="number" ng-model="prospect.age" />
+        <input type="number" ng-model="prospect.age" placeholder="Age" required />
       </label>
       <label id="label-address">
-        <p>Address</p>
-        <input type="text" ng-model="prospect.address" />
+        <input type="text" ng-model="prospect.address" placeholder="Street Address" required />
       </label>
       <label id="label-city">
-        <p>City</p>
-        <input type="text" ng-model="prospect.city" />
+        <input type="text" ng-model="prospect.city" placeholder="City" required />
       </label>
       <label id="label-state">
-        <p>State</p>
-        <input type="text" ng-model="prospect.state" />
+        <input type="text" ng-model="prospect.state" placeholder="State" required />
       </label>
       <label id="label-zip">
-        <p>Zip Code</p>
-        <input type="text" ng-model="prospect.zip" />
+        <input type="text" ng-model="prospect.zip" placeholder="Zip Code" required />
       </label>
       <label id="label-reasons">
         <p>Why are you interested in solar?</p>
-        <textarea ng-model="prospect.reasons"></textarea>
+        <textarea ng-model="prospect.reasons" required></textarea>
       </label>
-      <button ng-click="addProspect(prospect)" id="btn-add-prospect">Submit</button>
+      <button ng-click="addProspect(prospect)" ng-disabled="salesForm.$invalid" id="btn-add-prospect">Submit</button>
     </form>
   </div>
 </body>
