@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('solarSales', []);
-
-app.controller('salesController', function($scope, salesFactory) {
+var app = angular.module('solarSales', [])
+  .controller('salesController', function($scope, salesFactory) {
   $scope.addProspect = function(prospect) {
     salesFactory.addNewProspect(prospect);
+    // reset form
     $scope.prospect = {};
     $scope.salesForm.$setPristine();
   };

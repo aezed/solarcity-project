@@ -9,8 +9,11 @@ const bodyParser = require('body-parser');
 // CONFIGURATION ===================================
 const PORT = 8080;
 const app = express();
+// path for serving static files
 app.use(express.static('client'));
+// parses requested data chunks
 app.use(bodyParser());
+// sets up connnection to mongodb database
 mongoose.connect('mongodb://localhost/solarbase');
 
 // ROUTING ========================================
@@ -35,6 +38,7 @@ app.post('/api/prospects', (req, res) => {
     }
   });
 });
+
 // START SERVER ==================================
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}!`);
