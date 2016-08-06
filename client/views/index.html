@@ -3,40 +3,66 @@
 <head>
   <meta charset="utf-8">
   <title>Solar Online Sales</title>
+
   <!-- Add Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+  <!-- Add jQuery (dependency for Materialize CSS) -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Add Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+  <!-- Add Custom Styling -->
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+
   <!-- Application -->
   <script src="../src/app.js"></script>
 </head>
 <body ng-app="solarSales">
-  <h1>Tell us about yourself!</h1>
-  <div ng-controller="salesController">
-    <p>All fields are mandatory.</p>
-    <form name="salesForm">
-      <label id="label-name">
-        <input type="text" ng-model="prospect.name" placeholder="Name" required />
-      </label>
-      <label id="label-age">
-        <input type="number" ng-model="prospect.age" placeholder="Age" required />
-      </label>
-      <label id="label-address">
-        <input type="text" ng-model="prospect.address" placeholder="Street Address" required />
-      </label>
-      <label id="label-city">
-        <input type="text" ng-model="prospect.city" placeholder="City" required />
-      </label>
-      <label id="label-state">
-        <input type="text" ng-model="prospect.state" placeholder="State" required />
-      </label>
-      <label id="label-zip">
-        <input type="text" ng-model="prospect.zip" placeholder="Zip Code" required />
-      </label>
-      <label id="label-reasons">
-        <p>Why are you interested in solar?</p>
-        <textarea ng-model="prospect.reasons" required></textarea>
-      </label>
-      <button ng-click="addProspect(prospect)" ng-disabled="salesForm.$invalid" id="btn-add-prospect">Submit</button>
-    </form>
+  <div class="container">
+    <div ng-controller="salesController" class="row card-panel">
+      <div class="center sales-title">Tell us about yourself!</div>
+      <form name="salesForm" class="col s12">
+        <div class="input-field col s12 m6">
+          <input type="text" ng-model="prospect.name" placeholder="Name" class="validate" required />
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="number" ng-model="prospect.age" placeholder="Age" class="validate" required />
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" ng-model="prospect.address" placeholder="Street Address" class="validate" required />
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" ng-model="prospect.city" placeholder="City" class="validate" required/>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" ng-model="prospect.state" placeholder="State" class="validate" required/>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" ng-model="prospect.zip" placeholder="Zip Code" class="validate" required/>
+        </div>
+        <div class="input-field col s12">
+          <label for="reasons-text" class="active">Why are you interested in solar?</label>
+          <textarea
+            type="text"
+            ng-model="prospect.reasons"
+            id="reasons-text"
+            class="validate materialize-textarea"
+            required
+          >
+          </textarea>
+        </div>
+        <button
+          ng-click="addProspect(prospect)"
+          class="waves-effect waves-light btn"
+          id="btn-add-prospect"
+          ng-disabled="!salesForm.$valid">
+            Submit
+        </button>
+        <span class="right asterisk">*All fields mandatory</span>
+      </form>
+    </div>
   </div>
 </body>
 </html>

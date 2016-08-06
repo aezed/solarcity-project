@@ -1,0 +1,18 @@
+html {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/As_solar_firmengebaude.jpg');
+  background-size: cover;
+}
+
+.asterisk {
+  color: #546e7a;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.sales-title {
+  background-color: #546e7a;
+  color: white;
+  font-size: 40px;
+}
