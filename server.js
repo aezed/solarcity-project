@@ -3,8 +3,8 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const SolarProspect = require('./models/solarProspectModel.js')
 const bodyParser = require('body-parser');
+const SolarProspect = require('./models/solarProspectModel.js')
 
 // CONFIGURATION ===================================
 const PORT = 8080;
@@ -12,7 +12,7 @@ const app = express();
 // path for serving static files
 app.use(express.static('client'));
 // parses requested data chunks
-app.use(bodyParser());
+app.use(bodyParser.json());
 // sets up connnection to mongodb database
 mongoose.connect('mongodb://localhost/solarbase');
 
