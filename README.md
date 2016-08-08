@@ -44,15 +44,15 @@ I really appreciate the aesthetics of Google's Material Design. Materialize make
 First [install MongoDB](https://docs.mongodb.com/manual/installation/).
 
 Then run MongoDB with
- ```
- <path to binary>/mongod
- ```
+```
+<path to binary>/mongod
+```
 
- ### Installation
- Download or clone git repository, then navigate to the directory where you cloned it.
+### Installation
+Download or clone git repository, then navigate to the directory where you cloned it.
 
- Install Node dependencies and start the server with
- ```
+Install Node dependencies and start the server with
+```
 npm install
 npm start
 ```
